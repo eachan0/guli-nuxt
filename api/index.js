@@ -1,11 +1,18 @@
-import request from '@/utils/request'
+import request from "@/utils/request";
 
 export default {
-    //查询热门课程和名师
+  getTopBannerAdList() {
+    return request({
+    //   baseURL: "http://localhost:8140",
+      url: "/api/cms/ad/list/1",
+      method: "get"
+    });
+  },
+
   getIndexData() {
     return request({
-      url: '/eduservice/indexfront/index',
-      method: 'get'
-    })
+      url: "/api/edu/index",
+      method: "get"
+    });
   }
-}
+};

@@ -1,23 +1,21 @@
 import request from "@/utils/request";
-import qs from 'qs';
 export default {
-  //登录的方法
-  submitLoginUser(data) {
+  submitLogin(user) {
     return request({
-      url: `/educenter/member/login`,
+    //   baseURL: "http://localhost:8160",
+      url: "/api/ucenter/member/login",
       method: "post",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data:qs.stringify(data)
+      data: user
     });
   },
 
-  //根据token获取用户信息
-  getLoginUserInfo() {
+  getLoginInfo() {
     return request({
-      url: `/educenter/member/getMemberInfo`,
+    //   baseURL: "http://localhost:8160",
+      url: "/api/ucenter/member/get-login-info",
       method: "get"
+      // 通过请求头发送token
+      //   headers: { 'token': cookie.get('guli_jwt_token') }
     });
   }
 };

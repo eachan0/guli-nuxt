@@ -1,21 +1,20 @@
-import request from '@/utils/request'
+import request from "@/utils/request";
 
 export default {
-    //根据手机号发验证码
-  sendCode(phone) {
+  sendMessage(mobile) {
     return request({
-      url: `/edusms/send/${phone}`,
-      method: 'get'
-    })
+    //   baseURL: "http://localhost:8150",
+      url: `/api/sms/send/${mobile}`,
+      method: "get"
+    });
   },
 
-  //注册的方法
-  registerMember(formItem) {
+  register(member) {
     return request({
-      url: `/educenter/member/register`,
-      method: 'post',
-      data: formItem
-    })
+    //   baseURL: "http://localhost:8160",
+      url: "/api/ucenter/member/register",
+      method: "post",
+      data: member
+    });
   }
-
-}
+};
