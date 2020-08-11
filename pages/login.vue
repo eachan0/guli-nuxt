@@ -58,8 +58,8 @@
 </template>
 
 <script>
-import '@/assets/css/sign.css'
-import '@/assets/css/iconfont.css'
+import "@/assets/css/sign.css";
+import "@/assets/css/iconfont.css";
 import cookie from "js-cookie";
 import loginApi from "~/api/login";
 
@@ -85,7 +85,12 @@ export default {
         });
 
         // 跳转到网站的首页面
-        window.location.href = "/";
+        // window.location.href = "/";
+        if (document.referrer.indexOf("register") !== -1) {
+          window.location.href = "/";
+        } else {
+          history.go(-1);
+        }
       });
     },
   },

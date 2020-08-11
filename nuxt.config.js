@@ -48,7 +48,8 @@ export default {
    */
   plugins: [
     "@/plugins/element-ui",
-    { src: "@/plugins/nuxt-swiper-plugin.js", ssr: false }
+    { src: "@/plugins/nuxt-swiper-plugin.js", ssr: false },
+    { src: '@/plugins/vue-qriously-plugin.js', ssr: true }
   ],
   /*
    ** Auto import components

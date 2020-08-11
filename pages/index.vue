@@ -39,6 +39,7 @@
                         :src="course.cover"
                         :alt="course.title"
                         class="img-responsive"
+                        style="max-height:268px;"
                       >
                       <div class="cc-mask">
                         <a :href="'/course/'+course.id" title="开始学习" class="comm-btn c-btn-1">开始学习</a>
